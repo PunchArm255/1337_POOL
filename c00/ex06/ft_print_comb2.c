@@ -1,18 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnassiri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 18:15:14 by mnassiri          #+#    #+#             */
-/*   Updated: 2024/07/25 18:15:47 by mnassiri         ###   ########.fr       */
+/*   Created: 2024/07/25 18:13:26 by mnassiri          #+#    #+#             */
+/*   Updated: 2024/07/25 20:49:57 by mnassiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+void	ft_print_comb2(void)
 {
-	write (1, "abcdefghijklmnopqrstuvwxyz", 26);
+	int	a;
+	int	b;
+
+	a = 0;
+	while (a <= 99)
+	{
+		b = a + 1;
+		while (b <= 99)
+		{
+			write (1, &"0123456789"[a / 10], 1);
+			write (1, &"0123456789"[a % 10], 1);
+			write (1, " ", 1);
+			write (1, &"0123456789"[b / 10], 1);
+			write (1, &"0123456789"[b % 10], 1);
+			if (a != 98 || b != 99)
+			{
+				write (1, ", ", 2);
+			}
+			b++;
+		}
+		a++;
+	}
+}
+
+int	main(void)
+{
+	ft_print_comb2();
 }
