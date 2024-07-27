@@ -6,8 +6,20 @@
 /*   By: mnassiri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 22:14:28 by mnassiri          #+#    #+#             */
-/*   Updated: 2024/07/25 22:19:23 by mnassiri         ###   ########.fr       */
+/*   Updated: 2024/07/26 22:32:37 by mnassiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include 
+#include <unistd.h>
+
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+}

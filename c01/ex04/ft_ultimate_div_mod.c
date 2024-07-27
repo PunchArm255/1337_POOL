@@ -6,7 +6,7 @@
 /*   By: mnassiri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 22:01:53 by mnassiri          #+#    #+#             */
-/*   Updated: 2024/07/25 22:10:22 by mnassiri         ###   ########.fr       */
+/*   Updated: 2024/07/26 22:30:24 by mnassiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	ft_ultimate_div_mod(int *a, int *b)
 	int	div;
 	int	mod;
 
-	div = (a / b);
-	mod = (a % b);
+	div = (*a / *b);
+	mod = (*a % *b);
 	*a = div;
 	*b = mod;
 }
