@@ -6,11 +6,10 @@
 /*   By: mnassiri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 19:47:30 by mnassiri          #+#    #+#             */
-/*   Updated: 2024/08/07 17:36:58 by mnassiri         ###   ########.fr       */
+/*   Updated: 2024/08/09 22:10:07 by mnassiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
 
 void	ft_putstr(char *str)
@@ -39,21 +38,19 @@ int	ft_strcmp(char *s1, char *s2)
 	return (0);
 }
 
-/*void ft_swap(char **s1, char **s2)
+void	ft_swap(char **s1, char **s2)
 {
-	int	*swp;
+	char	*temp;
 
-	swp = *s1;
+	temp = *s1;
 	*s1 = *s2;
-	*s2 = swp;
-}*/
+	*s2 = temp;
+}
 
 int	main(int argc, char **argv)
 {
 	int	i;
 	int	j;
-    char *sort;
-
 
 	if (argc > 1)
 	{
@@ -62,9 +59,7 @@ int	main(int argc, char **argv)
 		{
 			if (ft_strcmp(argv[i], argv[i + 1]) > 0)
 			{
-            	sort = argv[i];
-				argv[i] = argv[i + 1];
-				argv[i + 1] = sort;
+				ft_swap(&argv[i], &argv[i + 1]);
 				i = 1;
 			}
 			else

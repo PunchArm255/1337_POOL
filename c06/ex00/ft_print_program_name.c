@@ -6,13 +6,13 @@
 /*   By: mnassiri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 18:12:57 by mnassiri          #+#    #+#             */
-/*   Updated: 2024/08/07 16:37:46 by mnassiri         ###   ########.fr       */
+/*   Updated: 2024/08/10 13:36:20 by mnassiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
 	int	i;
 
@@ -26,7 +26,10 @@ void ft_putstr(char *str)
 
 int	main(int argc, char **argv)
 {
-	ft_putstr(*argv);
-	write (1, "\n", 1);
+	if (argc >= 1)
+	{
+		ft_putstr(argv[0]);
+		write (1, "\n", 1);
+	}
 	return (0);
 }
